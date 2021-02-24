@@ -60,3 +60,20 @@ const {
 
 // Being sure to do all that's outlined above, write
 // your code below!
+
+const user = getInput(1);
+const pass = getInput(2);
+
+
+if (passwordMatches(user, pass) === true) {
+  console.log("You're logged in");
+} if (passwordMatches(user, pass) === false && isRegisteredUser(user) === true) {
+  console.log("Your password is incorrect")
+} if (isValidEmail(user) === true && isValidPassword(pass) === true && isRegisteredUser(user) === false) {
+  console.log("You're signed up");
+} if (isRegisteredUser(user) === false && isValidEmail(user) === false) {
+  console.log('Your email is not valid. Your email should contain your first name, last name and end with "@codeimmersives.com". Example: john.smith@codeimmersives.com')
+}
+if (isRegisteredUser(user) === false && isValidPassword(pass) === false) {
+  console.log('Your password is invalid. Your password should contain at least one lowercase character, one uppercase character and be not less than 8 symbols.')
+}
